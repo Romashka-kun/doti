@@ -1,5 +1,5 @@
 define с = Character("Саша",color = "#c8ffc8")
-define л = Character("Лена",color = "#c8ffc8")
+define л = Character("Лена",color = "#b84240")
 define е = Character("Егор",color = "#c8ffc8")
 
 #команды
