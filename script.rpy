@@ -14,7 +14,7 @@ label start:
   scene day1 with fade
   music in-his-room.ogg
   $ renpy.pause(3.3)
-  scene комната саши with fade
+  scene room1 with fade
   $ pause_ = 4
   show text "Комната Саши" at s
   $ renpy.pause (pause_, hard=True)
