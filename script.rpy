@@ -5,6 +5,7 @@ define е = Character("Егор",color = "#ffffff")
 define у = Character("Уборщица",color = "#c8ffc8")
 define flash = Fade(0.9, 4.0, 0.5, color="#B71313")
 define black = Fade(0.9, 3.0, 0.5, color="#262424")
+define bb = 1
 
 #{s}to see you{/s}. зачеркнуть текст
 #команды
@@ -13,8 +14,18 @@ transform s:
         ease 2 alpha 1.0 yalign .50
         ease 2 alpha 0.0 yalign .48
 #----------------------------------------------------------------------------------------------------------------------------------
-
 label start:
+
+    if persistent.remember:
+
+        jump left
+
+    else:
+
+        jump game
+
+
+label game:
     play music "audio/clock.ogg" volume 0.5
     $ renpy.pause(1.0)
     scene black
@@ -112,14 +123,6 @@ label start:
     with vpunch
     с "Это твоя судьба дурак!"
     с "Может быть ты сидишь за своим пк и думаешь что всё впорядке{cps=5}...{/cps} но всё не впорядке."
-    "Ты с кем вообще разговариваешь?"
+    "Ты с кем вообще разговариваешь"
     с "Только ты можешь изменить события в этой игре."
-    menu:
-
-        "Шизофренические сны первый симптом нестабильности ментального здовья":
-
-            jump left
-
-        "...":
-            jump right
-pause (pause_, hard=True)
+    $ persistent.remember = True
